@@ -57,17 +57,35 @@
     .navbar a:hover{background:#E0D8C8;color:var(--green);}
     .navbar a.active{color:var(--green);font-weight:500;}
 
-    /* ── Hero ── */
-    .hero{background:var(--cream-hero);border-bottom:1px solid var(--border);text-align:center;padding:56px 32px 52px;}
+    /* ── Banner construcción ── */
+    .construction-bar{background:#7A1A1A;text-align:center;padding:9px 20px;z-index:300;}
+    .construction-bar p{font-size:13px;color:#fff;font-family:'Source Sans 3',sans-serif;}
+    .construction-bar strong{background:rgba(255,255,255,0.2);padding:2px 8px;border-radius:2px;margin-right:8px;font-size:11px;letter-spacing:1px;text-transform:uppercase;}
+
+    /* ── Hero con foto de fondo ── */
+    .hero{background:var(--green-dark);border-bottom:3px solid var(--gold-mid);text-align:center;padding:80px 32px 72px;position:relative;overflow:hidden;min-height:460px;display:flex;align-items:center;justify-content:center;}
+    .hero-bg{position:absolute;inset:0;background:url('fotos/the-church.webp') center top/cover no-repeat;opacity:0.30;z-index:0;}
+    .hero-content{position:relative;z-index:1;width:100%;}
+
+    /* ── Mapa ── */
+    .mapa-section{background:#fff;padding:56px 32px;border-top:1px solid var(--border);}
+    .mapa-inner{max-width:1040px;margin:0 auto;}
+    .mapa-wrap{border:1px solid var(--border);overflow:hidden;margin-top:32px;}
+    .hero-content{position:relative;z-index:1;width:100%;}
     .hero-rule{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:20px;}
     .hero-rule span{height:1px;width:48px;background:var(--gold-mid);}
-    .hero h1{font-family:'Cinzel',serif;font-size:42px;font-weight:600;color:var(--green-dark);letter-spacing:3px;text-transform:uppercase;line-height:1.2;margin-bottom:10px;}
-    .hero p{font-size:17px;color:var(--muted);font-style:italic;font-family:'EB Garamond',serif;margin-bottom:32px;}
+    .hero h1{font-family:'Cinzel',serif;font-size:44px;font-weight:600;color:#FFFFFF;letter-spacing:3px;text-transform:uppercase;line-height:1.2;margin-bottom:10px;text-shadow:0 2px 12px rgba(0,0,0,0.5);}
+    .hero p{font-size:17px;color:#D8ECD6;font-style:italic;font-family:'EB Garamond',serif;margin-bottom:32px;text-shadow:0 1px 8px rgba(0,0,0,0.5);}
     .hero-acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    /* ── Localización ── */
+    .location-bar{background:var(--green-dark);padding:14px 32px;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.1);}
+    .location-bar a{font-size:13px;color:#A8C4A6;text-decoration:none;display:flex;align-items:center;gap:7px;}
+    .location-bar a:hover{color:#fff;}
+    .location-bar span{color:#4A6A48;}
     .btn-green{background:var(--green);color:#fff;border:none;padding:11px 24px;font-size:13px;font-weight:500;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:'Source Sans 3',sans-serif;}
     .btn-green:hover{background:var(--green-dark);}
-    .btn-outline{background:transparent;color:var(--green);border:1px solid var(--green);padding:11px 24px;font-size:13px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:'Source Sans 3',sans-serif;}
-    .btn-outline:hover{background:rgba(43,94,42,0.06);}
+    .btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.6);padding:11px 24px;font-size:13px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:'Source Sans 3',sans-serif;}
+    .btn-outline:hover{background:rgba(255,255,255,0.12);}
 
     /* ── Breadcrumb ── */
     .breadcrumb{background:#FAFAF8;border-bottom:1px solid var(--border);padding:9px 32px;font-size:12px;color:var(--muted);display:flex;gap:6px;}
@@ -132,7 +150,7 @@
 
     /* ── Actividades ── */
     .actividades{background:var(--cream-hero);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:56px 32px;}
-    .act-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1040px;margin:40px auto 0;}
+    .act-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;max-width:1040px;margin:40px auto 0;}
     .act-card{background:#fff;border:1px solid var(--border);overflow:hidden;}
     .act-img{width:100%;height:240px;object-fit:cover;display:block;background:var(--border);}
     .act-caption{padding:18px 20px 20px;}
@@ -200,6 +218,7 @@
       .hero h1{font-size:28px;letter-spacing:2px;}
       .hero{padding:40px 20px 36px;}
       section,.join-section,.actividades{padding:40px 18px;}
+      .act-grid{grid-template-columns:1fr;}
       .act-grid,.form-grid{grid-template-columns:1fr;}
       .form-full{grid-column:auto;}
       .footer-inner{grid-template-columns:1fr;}
@@ -223,6 +242,11 @@
 </div>
 
 <!-- ── HEADER (nombre de la parroquia — mantener en inglés) ── -->
+<!-- ── BANNER EN CONSTRUCCIÓN ── -->
+<div class="construction-bar">
+  <p><strong>🚧 En construcción</strong> Este sitio está siendo desarrollado. Algunos contenidos pueden estar incompletos. — <em>St. Vincent Martyr Parish</em></p>
+</div>
+
 <div class="header">
   <div class="logo-main">St. Vincent<br>Martyr</div>
   <div class="logo-sub">Parish · Ministerios</div>
@@ -240,11 +264,14 @@
   <a onclick="document.getElementById('eventos').scrollIntoView({behavior:'smooth'})">Eventos</a>
   <a onclick="document.getElementById('eventos').scrollIntoView({behavior:'smooth'})">Eventos</a>
   <a onclick="document.getElementById('actividades').scrollIntoView({behavior:'smooth'})">Actividades</a>
+  <a onclick="document.getElementById('ubicacion').scrollIntoView({behavior:'smooth'})">Ubicación</a>
   <a onclick="document.getElementById('unete').scrollIntoView({behavior:'smooth'})">Únete</a>
 </nav>
 
 <!-- ── HERO ── -->
 <div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
   <div class="hero-rule"><span></span><span style="color:var(--gold-mid);font-size:13px;">✝</span><span></span></div>
   <!-- TÍTULO PRINCIPAL — puedes cambiar el texto -->
   <h1>Ministerios<br>Hispanos</h1>
@@ -252,6 +279,7 @@
   <div class="hero-acts">
     <button class="btn-green" onclick="document.getElementById('ministerios').scrollIntoView({behavior:'smooth'})">Conoce los ministerios</button>
     <button class="btn-outline" onclick="document.getElementById('unete').scrollIntoView({behavior:'smooth'})">Quiero unirme</button>
+  </div>
   </div>
 </div>
 
@@ -378,6 +406,92 @@
         </div>
       </div>
 
+      <!-- FOTO 3 — Jóvenes invitación -->
+      <div class="act-card">
+        <img class="act-img" src="fotos/foto-jovenes.jpeg" alt="Jóvenes frente a la iglesia San Vicente Mártir">
+        <div class="act-caption">
+          <div class="act-date">2026 · Juventud Viva</div>
+          <div class="act-title">¡La Iglesia también es tuya!</div>
+          <p class="act-desc">Jóvenes de nuestra comunidad frente a San Vicente Mártir al atardecer. Si tienes entre 12 y 25 años, Juventud Viva te espera — un espacio donde Dios también te habla a ti.</p>
+        </div>
+      </div>
+
+      <!-- FOTO 4 — Palabra Viva -->
+      <div class="act-card">
+        <img class="act-img" src="fotos/palabra-viva.jpeg" alt="Proclamadora del Ministerio Palabra Viva en el ambón">
+        <div class="act-caption">
+          <div class="act-date">2026 · Palabra Viva</div>
+          <div class="act-title">La Palabra que Sana</div>
+          <p class="act-desc">Una joven proclamadora de Palabra Viva lleva la Palabra de Dios a los feligreses desde el ambón de San Vicente Mártir. Junto a ella, la imagen de Carlo Acutis, patrono de los jóvenes.</p>
+        </div>
+      </div>
+
+      <!-- FOTO 5 — María, Sí Vive -->
+      <div class="act-card">
+        <img class="act-img" src="fotos/maria-si-vive.jpeg" alt="Ministerio María Sí Vive — Holy Rosary">
+        <div class="act-caption">
+          <div class="act-date">2026 · María, Sí Vive</div>
+          <div class="act-title">Rezando el Santo Rosario</div>
+          <p class="act-desc">Integrantes del ministerio María, Sí Vive lideran la oración del Rosario en el altar de la parroquia, uniendo a la comunidad de la mano de la Santísima Virgen.</p>
+        </div>
+      </div>
+
+      <!-- FOTO 6 — Día de la Madre -->
+      <div class="act-card">
+        <img class="act-img" src="fotos/dia-madre.jpeg" alt="Celebración del Día de la Madre en la parroquia">
+        <div class="act-caption">
+          <div class="act-date">Mayo 2026 · Comunidad</div>
+          <div class="act-title">Celebración del Día de la Madre</div>
+          <p class="act-desc">Nuestra comunidad celebró a las madres con una Misa especial y claveles rojos. Un momento de amor, gratitud y fraternidad dentro de la hermosa iglesia de San Vicente Mártir.</p>
+        </div>
+      </div>
+
+      <!-- FOTO 7 — Día del Padre -->
+      <div class="act-card">
+        <img class="act-img" src="fotos/dia-padre.jpeg" alt="Celebración del Día del Padre">
+        <div class="act-caption">
+          <div class="act-date">Junio 2026 · Comunidad</div>
+          <div class="act-title">Celebración del Día del Padre</div>
+          <p class="act-desc">Los padres de nuestra comunidad hispana se reunieron para compartir y celebrar juntos su día con pastel, fraternidad y mucha alegría. ¡Bendición para todos los papás!</p>
+        </div>
+      </div>
+
+      <!-- FOTO 8 — Visita Washington NJ -->
+      <div class="act-card">
+        <img class="act-img" src="fotos/visita-washington.jpeg" alt="Visita y peregrinación a Washington NJ">
+        <div class="act-caption">
+          <div class="act-date">2026 · Peregrinación</div>
+          <div class="act-title">Peregrinación a Washington, NJ</div>
+          <p class="act-desc">Nuestra comunidad realizó una visita espiritual a Washington, NJ — una jornada de fe, encuentro y alegría compartida junto al Padre Yohan Serrano y los ministerios.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── MAPA ── -->
+<div class="mapa-section" id="ubicacion">
+  <div class="mapa-inner">
+    <div class="section-head">
+      <div class="section-rule"><span></span><span style="color:var(--gold-mid)">✦</span><span></span></div>
+      <div class="eyebrow">Madison, New Jersey</div>
+      <div class="section-title">Cómo Llegarnos</div>
+      <p class="section-desc">26 Green Village Road, Madison, NJ 07940 · (973) 377-4000</p>
+    </div>
+    <div class="mapa-wrap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6!2d-74.4196!3d40.7598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3a8c3e8e7b1a1%3A0x1234567890abcdef!2sSt.%20Vincent%20Martyr%20Church%2C%2026%20Green%20Village%20Rd%2C%20Madison%2C%20NJ%2007940!5e0!3m2!1sen!2sus!4v1234567890"
+        width="100%" height="400" style="border:0;display:block;" allowfullscreen=""
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Ubicación de St. Vincent Martyr Parish">
+      </iframe>
+    </div>
+    <div style="text-align:center;margin-top:16px;">
+      <a href="https://maps.google.com/?q=St+Vincent+Martyr+Church+26+Green+Village+Road+Madison+NJ" target="_blank"
+         style="display:inline-block;background:var(--green);color:#fff;font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:10px 24px;text-decoration:none;border-radius:2px;">
+        Abrir en Google Maps →
+      </a>
     </div>
   </div>
 </div>
@@ -476,7 +590,7 @@ const MINS = [
 <div class="ms"><h3>¿A quiénes va dirigido?</h3><p>Niños, adolescentes y jóvenes. También a sus padres para apoyar el crecimiento espiritual familiar.</p></div>`},
 
   // ── 2. MARÍA, SÍ VIVE ──
-  { sym:'⚜', name:'María, Sí Vive', sub:'Discípulos del Inmaculado Corazón de María',
+  { sym:'⚜', name:'María, Sí Vive', sub:'Discípulos del Inmaculado Corazón de María', photo:'fotos/maria-si-vive.jpeg',
     desc:'Facilitadores e hijos de María, acercando almas a Dios con oración, escucha y acompañamiento fraterno.',
     tags:['Oración','Rosario','Sanación'],
     body:`<div class="ms"><h3>Misión</h3><p>Guiar a la comunidad a un encuentro con Jesucristo de la mano de María, fomentando la oración, la formación en la fe, la conversión del corazón y el servicio fraterno.</p></div>
@@ -485,7 +599,7 @@ const MINS = [
 <div class="ms"><h3>Valores</h3><div class="vals"><div class="val"><strong>Fe</strong><span>"Hágase en mí según tu palabra" (Lc 1,38)</span></div><div class="val"><strong>Humildad</strong><span>Servir con sencillez</span></div><div class="val"><strong>Servicio</strong><span>Talentos al servicio de Dios</span></div><div class="val"><strong>Obediencia</strong><span>Responder con entrega generosa</span></div></div></div>`},
 
   // ── 3. PALABRA VIVA ──
-  { sym:'✥', name:'Palabra Viva', sub:'Ministerio de Proclamación de la Palabra',
+  { sym:'✥', name:'Palabra Viva', sub:'Ministerio de Proclamación de la Palabra', photo:'fotos/palabra-viva.jpeg',
     desc:'Proclamar la Palabra viva de Dios, siendo sus manos, su voz y su bálsamo en cada celebración.',
     tags:['Liturgia','Proclamación','Formación'],
     body:`<div class="ms"><h3>Misión</h3><p>Proclamar la Palabra viva de Dios, siendo sus manos, su voz y su bálsamo al servicio de la comunidad para que todos puedan descubrir el llamado de nuestro Padre Dios.</p></div>
@@ -562,7 +676,8 @@ function openM(m){
   document.getElementById('m-sym').textContent=m.sym;
   document.getElementById('m-name').textContent=m.name;
   document.getElementById('m-sub').textContent=m.sub;
-  document.getElementById('m-bdy').innerHTML=m.body+`<button class="modal-btn" onclick="closeM();document.getElementById('unete').scrollIntoView({behavior:'smooth'})">Unirme a ${m.name}</button>`;
+  const photoHtml = m.photo ? `<img src="${m.photo}" alt="${m.name}" style="width:100%;height:200px;object-fit:cover;display:block;margin-bottom:20px;">` : '';
+  document.getElementById('m-bdy').innerHTML=photoHtml+m.body+`<button class="modal-btn" onclick="closeM();document.getElementById('unete').scrollIntoView({behavior:'smooth'})">Unirme a ${m.name}</button>`;
   document.getElementById('modal-bd').classList.add('open');
   document.body.style.overflow='hidden';
 }
